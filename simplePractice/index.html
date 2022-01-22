@@ -32,24 +32,58 @@
 
 <script>
     let setColor = document.querySelector(".square");
+    let someEffect = document.querySelector(".round");
+
+    
     // function for the effect
     function changeColor() {
+        //  setColor.style.transform = "rotateX(-50deg);"
          setColor.style.background = "rgb(218, 7, 7)" ;
          setColor.style.borderRadius = "50%";
-        //  setColor.style.transform = "rotateX(-50deg);"
-         setColor.style.transition = "all 1s ease-in-in";
-         
-        }
-        //fucntion for get thing normal
+         setColor.style.transition = "all 1s ease-in-in";         
+    }
+
+        // function for get thing normal
     function setNormal(){
+        
          setColor.style.background = "rgb(0, 0, 0)" ;
          setColor.style.borderRadius = "0";
-        //  setColor.style.transform = "rotateX(-50deg);"
+
          setColor.style.transition = "all 0.5s ease-in-out";
-         
+         setColor.style.transform = "rotateY(-50deg);"
+    }
+    
+    function textChanger(){
+        someEffect.innerHTML.style.transform = "scaleX(-1)"
+    }
+
+    function flipThis(){
+        someEffect.style.transform = "rotateY(180deg)" 
+        someEffect.style.background = "red" ;
+        someEffect.style.transition = "all 0.5s"
+        someEffect.innerHTML = "this will rotate"
+        // someEffect.innerHTML.style.transform = "scaleX(-1)"
+       
+        
+    }
+
+    function redo(){
+        someEffect.style.transform = "rotateY(0deg)" 
+        someEffect.style.background = "black" ;
+        someEffect.style.transition = "all 0.5s ease-in-out";
+        someEffect.innerHTML = "this will rotate"
 
     }
+
+
+
+
+
+
     // eventFor mouse in and out
+    
+    someEffect.addEventListener('mouseover',flipThis)
+    someEffect.addEventListener('mouseout',redo)
     setColor.addEventListener('mouseover',changeColor)
     setColor.addEventListener('mouseout',setNormal)
 </script>
