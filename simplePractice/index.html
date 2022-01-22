@@ -32,7 +32,7 @@
 
 <script>
     let setColor = document.querySelector(".square");
-
+    // function for the effect
     function changeColor() {
          setColor.style.background = "rgb(218, 7, 7)" ;
          setColor.style.borderRadius = "50%";
@@ -40,6 +40,7 @@
          setColor.style.transition = "all 1s ease-in-in";
          
         }
+        //fucntion for get thing normal
     function setNormal(){
          setColor.style.background = "rgb(0, 0, 0)" ;
          setColor.style.borderRadius = "0";
@@ -48,6 +49,7 @@
          
 
     }
+    // eventFor mouse in and out
     setColor.addEventListener('mouseover',changeColor)
     setColor.addEventListener('mouseout',setNormal)
 </script>
